@@ -93,7 +93,6 @@ const CartComponent = (props) => {
                 )}
                 
           </Grid>
-            
         </React.Fragment>
     )
 }

@@ -1,5 +1,5 @@
 
-import { ADD_TO_WISHLIST, REMOVE_FROM_WISHLIST } from "./actionTypes";
+import { ADD_TO_WISHLIST, REMOVE_FROM_WISHLIST, REORDER_WISHLIST_ITEMS } from "./actionTypes";
 
 export const addItemToWishlist = (product, isWishlist) => (dispatch, getState) => {
     const wishlistItems = getState().wishlist.wishlistItems.slice();
@@ -27,3 +27,9 @@ export const addItemToWishlist = (product, isWishlist) => (dispatch, getState) =
     dispatch({ type: REMOVE_FROM_WISHLIST, payload: { wishlistItems } });
     localStorage.setItem("wishlistItems", JSON.stringify(wishlistItems));
   };
+
+  export const reorderWishlistItems = (wishlistItems) => (dispatch, getState) => {
+    dispatch({ type: REORDER_WISHLIST_ITEMS, payload: { wishlistItems } });
+    localStorage.setItem("wishlistItems", JSON.stringify(wishlistItems));
+  };
+  

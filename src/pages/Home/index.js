@@ -7,8 +7,7 @@ import Grid from '@mui/material/Grid'
 import FilterCompononent from "../../components/products/filter";
 import Typography from '@mui/material/Typography';
 import ProductDetails from "../../components/productDetails";
-import SwipeableDrawer from '@mui/material/SwipeableDrawer';
-import CartComponent from "../../components/cart";
+
 import { addItemToCart } from "../../store/cart/actionCreator";
 
 const Home = (props) => {
@@ -16,7 +15,6 @@ const Home = (props) => {
     const productsList = useSelector((state)=>state.products.filteredItems)
     const size = useSelector((state)=>state.products.size) || ''
     const sort = useSelector((state)=>state.products.sort) || ''
-    const isOpenCart = useSelector((state)=>state.cart.isCartOpen)
     const [product, setProduct] = React.useState(null)
     const [open, setOpen] = React.useState(false);
 
@@ -26,8 +24,9 @@ const Home = (props) => {
         }
     },[dispatch])
 
-    const handleAddToCartBtn = (product) => {
-        dispatch(addItemToCart(product))
+    const handleAddToCartBtn = (product, qty) => {
+        const quantity = qty ? qty : 1 ; 
+        dispatch(addItemToCart(product, quantity))
         handleClose()
     }
     const openModal = (product) => {
@@ -71,14 +70,7 @@ const Home = (props) => {
                 </Grid>  
             </Fade>
             {product && (<ProductDetails productInfo={product} open={open} handleCloseFn={handleClose} addToCartFn={handleAddToCartBtn}/>)}
-            <SwipeableDrawer
-                anchor='right'
-                open={isOpenCart}
-                onClose={()=>{dispatch({type:"CLOSE_CART_SECTION", payload:''})}}
-                onOpen={()=>{dispatch({type:"OPEN_CART_SECTION", payload:''})}}
-            >
-                <CartComponent />
-            </SwipeableDrawer>            
+                   
         </React.Fragment>
     )
 }

@@ -1,13 +1,15 @@
 
 import { ADD_TO_CART, REMOVE_FROM_CART } from "./actionTypes";
 
-export const addItemToCart = (product) => (dispatch, getState) => {
+export const addItemToCart = (product, qty) => (dispatch, getState) => {
     const cartItems = getState().cart.cartItems.slice();
     let alreadyExists = false;
     cartItems.forEach((x) => {
       if (x._id === product._id) {
         alreadyExists = true;
-        x.count++;
+        if(qty){
+            x.count = x.count + parseInt(qty) 
+        } else{ x.count++}
       }
     });
     if (!alreadyExists) {

@@ -14,8 +14,6 @@ import ButtonBase from '@mui/material/ButtonBase';
 import TextField from '@mui/material/TextField';
 import MenuItem from '@mui/material/MenuItem';
 import {formatCurrency} from '../../utils';
-import { addItemToCart } from '../../store/cart/actionCreator';
-import { useDispatch } from "react-redux"
 
 const Img = styled('img')({
   margin: 'auto',
@@ -26,8 +24,7 @@ const Img = styled('img')({
 
 export default function ProductDetails(props) {
   const { productInfo = {}, open = '', handleCloseFn =()=>{}, addToCartFn=()=>{} } = props 
-  const {id='', image='', title='',  price='',description=''} = productInfo || {}
-  const dispatch = useDispatch()
+  const { image='', title='',  price='',description=''} = productInfo || {}
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
 
@@ -65,21 +62,7 @@ export default function ProductDetails(props) {
                             {description}
                         </Typography>
                         <Grid container>
-                            <Grid item xs={12} md={6} lg={6}>
-                                <TextField
-                                    id="product_size"
-                                    select
-                                    label="Size"
-                                    helperText="Available Sizes "
-                                    >
-                                    {productInfo.availableSizes.map((option) => (
-                                        <MenuItem key={option} value={option}>
-                                            {option}
-                                        </MenuItem>
-                                    ))}
-                                </TextField>
-                            </Grid>
-                            <Grid item xs={12} md={6} lg={6}>
+                           <Grid item xs={12} md={6} lg={6}>
                                 <TextField
                                     required
                                     id="product_qty"
@@ -91,7 +74,7 @@ export default function ProductDetails(props) {
                         </Grid>
                         <Grid item>
                         <Typography sx={{ cursor: 'pointer' }} variant="body2">
-                        <Button onClick={()=>addToCartFn(productInfo)} variant='contained' autoFocus>
+                        <Button onClick={()=>addToCartFn(productInfo, document.getElementById("product_qty").value)} variant='contained' autoFocus>
                             AddToCart
                         </Button>
                         </Typography>

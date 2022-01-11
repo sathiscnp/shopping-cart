@@ -1,4 +1,4 @@
-import React, {useCallback} from "react";
+import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { sortProducts, filterProducts, searchProducts } from "../../store/products/actionCreator";
 import Grid from '@mui/material/Grid'
@@ -23,7 +23,7 @@ const FilterCompononent = () => {
         const products = (filtertedProducts.length > 0) ? filtertedProducts : productsList;
         dispatch(searchProducts(products, ev.target.value, productsList))
     }, 100)
-    //const optimizedFn = useCallback(debounce(handleSearch, 1000), []);
+
     return(
         <React.Fragment>
            {filtertedProducts && (

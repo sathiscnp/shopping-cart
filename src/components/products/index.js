@@ -7,7 +7,6 @@ import CardActions from '@mui/material/CardActions';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import FavoriteIcon from '@mui/icons-material/Favorite';
 import Grid from '@mui/material/Grid'
 import { withStyles } from '@mui/styles';
 import styles from '../../styles/productCard'
@@ -15,10 +14,8 @@ import {formatCurrency} from '../../utils';
 import Checkbox from '@mui/material/Checkbox';
 import FavoriteBorder from '@mui/icons-material/FavoriteBorder';
 import Favorite from '@mui/icons-material/Favorite';
-import { addItemToCart } from '../../store/cart/actionCreator';
 import { useDispatch } from "react-redux"
 import { addItemToWishlist } from '../../store/wishlist/actionCreator';
-import { FOCUSABLE_SELECTOR } from '@testing-library/user-event/dist/utils';
 
 const ProductCard = (props) => {
   const dispatch = useDispatch()
@@ -55,7 +52,6 @@ const ProductCard = (props) => {
                 />
             </a>
             <CardContent>
-            
             <CardHeader
                 action={
                 <IconButton aria-label="add to favorites">
