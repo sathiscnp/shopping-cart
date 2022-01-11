@@ -9,6 +9,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 const MenuListComponent = () => {
     const dispatch = useDispatch()
     const cartItems = useSelector((state)=> state.cart.cartItems)
+    
     return (
         <>
         <Link href="/wishlist"><Button id="wishlist">Wishlist</Button> </Link>

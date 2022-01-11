@@ -15,6 +15,7 @@ import Divider from '@mui/material/Divider';
 import { removeItemFromWishlist, reorderWishlistItems } from "../../store/wishlist/actionCreator";
 import { addItemToCart } from "../../store/cart/actionCreator";
 import RLDD from 'react-list-drag-and-drop/lib/RLDD';
+import PriceComponent from "../common/price";
 
 const WishlistComponent = (props) => {
     const { classes={} } = props
@@ -57,7 +58,7 @@ const WishlistComponent = (props) => {
                                         <img width="100" height="100" alt={item.title} src={item.image} />
                                     </ButtonBase>
                                     </ListItemAvatar>
-                                    <ListItemText primary={item.title} secondary={`${formatCurrency(item.price)} x ${item.count}`} />
+                                    <ListItemText primary={item.title} secondary={<PriceComponent productInfo={item}/>} />
                                     <ListItemText >
                                         <Button
                                         className="button"

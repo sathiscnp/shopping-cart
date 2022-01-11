@@ -13,6 +13,7 @@ import Typography from '@mui/material/Typography';
 import ButtonBase from '@mui/material/ButtonBase';
 import TextField from '@mui/material/TextField';
 import {formatCurrency} from '../../utils';
+import PriceComponent from '../common/price';
 
 const Img = styled('img')({
   margin: 'auto',
@@ -55,7 +56,7 @@ export default function ProductDetails(props) {
                     <Grid item xs container direction="column" spacing={2}>
                         <Grid item xs>
                         <Typography gutterBottom variant="h5" component="div">
-                            {formatCurrency(price)}
+                            <PriceComponent productInfo={productInfo} />
                         </Typography>
                         <Typography variant="body2" gutterBottom>
                             {description}

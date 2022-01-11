@@ -11,6 +11,9 @@ const styles = (theme) => ({
             color: theme.appBar.primary
         }
     },
+    timerText:{
+        color: theme.appBar.primary
+    },
     appBar:{
         backgroundColor:`${theme.appBar.primary.main} !important`
     }

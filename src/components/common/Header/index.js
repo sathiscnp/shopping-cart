@@ -8,6 +8,7 @@ import styles from '../../../styles/header'
 import Link from '@mui/material/Link';
 import Switch from '@mui/material/Switch';
 import { useDispatch, useSelector } from 'react-redux';
+import TimerComponent from '../Timer';
 
 const Header = (props) => {
   const { classes={}, MenuComponent='' } = props
@@ -22,7 +23,10 @@ const Header = (props) => {
       <AppBar position="fixed" className={classes.appBar}>
         <Toolbar >
           <Typography variant="h6" component="div" sx={{ flexGrow: 1, textAlign:'left' }}>
-          <Link href="/"> Lowe's Shopping Cart</Link>
+          <Link href="/"> Shopping Cart</Link>
+          </Typography>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1, textAlign:'center' }}>
+            <TimerComponent classes={classes}/>
           </Typography>
           <Typography  component="div" sx={{ flexGrow: 1, textAlign:'right' }}>
             {MenuComponent}

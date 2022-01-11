@@ -6,16 +6,15 @@ import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid'
 import { withStyles } from '@mui/styles';
 import styles from '../../styles/productCard'
-import {formatCurrency} from '../../utils';
 import Checkbox from '@mui/material/Checkbox';
 import FavoriteBorder from '@mui/icons-material/FavoriteBorder';
 import Favorite from '@mui/icons-material/Favorite';
 import { useDispatch } from "react-redux"
 import { addItemToWishlist } from '../../store/wishlist/actionCreator';
+import PriceComponent from '../common/price';
 
 const ProductCard = (props) => {
   const dispatch = useDispatch()
@@ -34,7 +33,7 @@ const ProductCard = (props) => {
   } 
 
   const handleWishlist = (ev, product) => {
-    dispatch(addItemToWishlist(productInfo,ev.target.checked))
+    dispatch(addItemToWishlist(productInfo, ev.target.checked))
   }
   return (
     <Grid item xs={12} md={3} lg={3}>
@@ -70,9 +69,7 @@ const ProductCard = (props) => {
             <CardActions disableSpacing>
             <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
                 <Grid item xs={6}>
-                    <Typography variant="h5" color="text.secondary">
-                    {formatCurrency(price)}
-                    </Typography>
+                    <PriceComponent productInfo={productInfo}/>
                 </Grid>
                 <Grid item xs={6}>
                     <Button size='small' onClick={()=> addToCartFn(productInfo)} variant="contained">AddToCart</Button>
