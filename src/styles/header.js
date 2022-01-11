@@ -1,4 +1,4 @@
-const styles = () => ({
+const styles = (theme) => ({
     root:{
         flexGrow:1,
         display:'flex',
@@ -8,12 +8,11 @@ const styles = () => ({
         },
         '& a':{
             textDecoration:"none",
-            color:'#fff'
+            color: theme.appBar.primary
         }
     },
-    
     appBar:{
-        backgroundColor:'#012169 !important'
+        backgroundColor:`${theme.appBar.primary.main} !important`
     }
 })
 

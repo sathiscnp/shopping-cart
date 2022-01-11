@@ -61,12 +61,14 @@ const WishlistComponent = (props) => {
                                     <ListItemText >
                                         <Button
                                         className="button"
+                                        color="secondary"
                                         onClick={() =>dispatch(removeItemFromWishlist(item, false))   }
                                         >
                                         Remove
                                         </Button>
                                         <Button
                                         className="button"
+                                        color="secondary"
                                         onClick={() =>dispatch(addItemToCart(item))   }
                                         >
                                         AddToCart

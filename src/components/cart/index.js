@@ -53,6 +53,7 @@ const CartComponent = (props) => {
                                 <ListItemText primary={item.title} secondary={`${formatCurrency(item.price)} x ${item.count}`} />
                                 <ListItemText >
                                     <Button
+                                    color="secondary"
                                     className="button"
                                     onClick={() =>dispatch(removeItemFromCart(item))   }
                                     >

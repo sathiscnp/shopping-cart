@@ -56,10 +56,10 @@ const ProductCard = (props) => {
                 action={
                 <IconButton aria-label="add to favorites">
                     {isWishlistItem(productInfo) ? (
-                        <Checkbox onClick={(ev)=>handleWishlist(ev, productInfo)} id={`chkbox_${_id}`} defaultChecked icon={<FavoriteBorder />} checkedIcon={<Favorite />} />
+                        <Checkbox color="secondary" onClick={(ev)=>handleWishlist(ev, productInfo)} id={`chkbox_${_id}`} defaultChecked icon={<FavoriteBorder />} checkedIcon={<Favorite />} />
                     ) :
                     (
-                        <Checkbox onClick={(ev)=>handleWishlist(ev, productInfo)} id={`chkbox_${_id}`}  icon={<FavoriteBorder />} checkedIcon={<Favorite />} />
+                        <Checkbox  onClick={(ev)=>handleWishlist(ev, productInfo)} id={`chkbox_${_id}`}  icon={<FavoriteBorder />} checkedIcon={<Favorite />} />
                     )}
                     
                 </IconButton>

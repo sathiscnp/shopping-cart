@@ -1,4 +1,4 @@
-const styles = () => ({
+const styles = (theme) => ({
     root:{
         flexGrow:1,
     },
@@ -7,7 +7,7 @@ const styles = () => ({
         textAlign:'left',
         borderRadius:'0px',
         height:'40px',
-        backgroundColor:'#012169',
+        backgroundColor:theme.appBar.primary.main,
         opacity:'1',
         bottom: 0,
         left:'auto',

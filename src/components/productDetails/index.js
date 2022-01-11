@@ -12,7 +12,6 @@ import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 import ButtonBase from '@mui/material/ButtonBase';
 import TextField from '@mui/material/TextField';
-import MenuItem from '@mui/material/MenuItem';
 import {formatCurrency} from '../../utils';
 
 const Img = styled('img')({
