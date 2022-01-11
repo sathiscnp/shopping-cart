@@ -1,6 +1,10 @@
-# Getting Started with Create React App
+# Shopping Cart App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Installation
+1. git clone current project
+2. cd shopping-cart
+3. nvm use
+4. npm install
 
 ## Available Scripts
 
