@@ -7,7 +7,7 @@ const Footer = (props) => {
     return(
     <Grid container className={classes.footerSection}>
         <Grid item xs>
-            <div className={classes.footerLabelTxt}>&copy; {new Date().getFullYear()} Lowe's Brand Inc.</div>
+            <div className={classes.footerLabelTxt}>&copy; {new Date().getFullYear()} Company Brand Inc.</div>
         </Grid>
     </Grid>)
 }
